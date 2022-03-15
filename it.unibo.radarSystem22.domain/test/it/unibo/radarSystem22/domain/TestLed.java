@@ -28,6 +28,7 @@ public class TestLed {
 	@Test
 	public void testLedMock() {
 		
+		// Non uso il file json di configurazione
 		DomainSystemConfig.simulation = true;
 		
 		ILed led = DeviceFactory.createLed();
