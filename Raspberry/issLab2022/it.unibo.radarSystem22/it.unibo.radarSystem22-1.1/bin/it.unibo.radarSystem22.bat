@@ -67,7 +67,7 @@ goto fail
 :execute
 @rem Setup the command line
 
-set CLASSPATH=%APP_HOME%\lib\it.unibo.radarSystem22-0.2.jar;%APP_HOME%\lib\trident-1.3.jar;%APP_HOME%\lib\android-2.3.3.jar;%APP_HOME%\lib\json-20160810.jar;%APP_HOME%\lib\it.unibo.radarSystem22.domain-1.0.jar;%APP_HOME%\lib\it.unibo.comm2022-1.0.jar;%APP_HOME%\lib\2p301.jar;%APP_HOME%\lib\uniboInterfaces.jar;%APP_HOME%\lib\unibonoawtsupports.jar;%APP_HOME%\lib\radarPojo.jar;%APP_HOME%\lib\x86_64-3.3.0-v3346.jar;%APP_HOME%\lib\x86-3.3.0-v3346.jar;%APP_HOME%\lib\httpclient-4.0.1.jar;%APP_HOME%\lib\commons-logging-1.1.1.jar;%APP_HOME%\lib\opengl-api-gl1.1-android-2.1_r1.jar;%APP_HOME%\lib\xmlParserAPIs-2.6.2.jar;%APP_HOME%\lib\xpp3-1.1.4c.jar;%APP_HOME%\lib\httpcore-4.0.1.jar;%APP_HOME%\lib\commons-codec-1.3.jar
+set CLASSPATH=%APP_HOME%\lib\it.unibo.radarSystem22-1.1.jar;%APP_HOME%\lib\trident-1.3.jar;%APP_HOME%\lib\android-2.3.3.jar;%APP_HOME%\lib\json-20160810.jar;%APP_HOME%\lib\it.unibo.radarSystem22.domain-1.0.jar;%APP_HOME%\lib\it.unibo.comm2022-1.0.jar;%APP_HOME%\lib\2p301.jar;%APP_HOME%\lib\uniboInterfaces.jar;%APP_HOME%\lib\unibonoawtsupports.jar;%APP_HOME%\lib\radarPojo.jar;%APP_HOME%\lib\x86_64-3.3.0-v3346.jar;%APP_HOME%\lib\x86-3.3.0-v3346.jar;%APP_HOME%\lib\httpclient-4.0.1.jar;%APP_HOME%\lib\commons-logging-1.1.1.jar;%APP_HOME%\lib\opengl-api-gl1.1-android-2.1_r1.jar;%APP_HOME%\lib\xmlParserAPIs-2.6.2.jar;%APP_HOME%\lib\xpp3-1.1.4c.jar;%APP_HOME%\lib\httpcore-4.0.1.jar;%APP_HOME%\lib\commons-codec-1.3.jar
 
 
 @rem Execute it.unibo.radarSystem22
