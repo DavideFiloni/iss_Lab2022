@@ -48,9 +48,11 @@ public class SonarConcrete extends SonarModel implements ISonar{
 			int v = Integer.parseInt(data);
 			ColorsOut.out("SonarConcrete | v=" + v );
 			int lastSonarVal = curVal.getVal();
-			if( lastSonarVal != v && v < DomainSystemConfig.sonarDistanceMax) {	
-				//Eliminiamo dati del tipo 3430 //TODO: filtri in sottosistemi a stream
-  	 			updateDistance( v );	 			
+			if( lastSonarVal != v) {
+				if (v > DomainSystemConfig.sonarDistanceMax) //Eliminiamo dati del tipo 3430 //TODO: filtri in sottosistemi a stream
+					updateDistance(DomainSystemConfig.sonarDistanceMax);
+				else
+					updateDistance( v );	 			
 			}
        }catch( Exception e) {
        		ColorsOut.outerr("SonarConcrete |  " + e.getMessage() );

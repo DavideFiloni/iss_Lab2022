@@ -16,6 +16,11 @@ public class RadarSystemConfig {
 	
 	public static boolean  RadarGuiRemote = false;
 	
+	//Sprint 2
+	public static String hostAddr         = "localhost";		
+	public static String raspAddr         = "localhost";		
+	public static int serverPort          = 8023;
+	
 	public static void setTheConfiguration(  ) {
 		setTheConfiguration("../RadarSystemConfig.json");
 	}
@@ -34,7 +39,10 @@ public class RadarSystemConfig {
    	        tracing          = object.getBoolean("tracing");
 	        testing          = object.getBoolean("testing");
 	        RadarGuiRemote   = object.getBoolean("RadarGuiRemote");
-	        DLIMIT           = object.getInt("DLIMIT");	
+	        DLIMIT           = object.getInt("DLIMIT");
+	        hostAddr		 = object.getString("hostAddr");
+	        raspAddr		 = object.getString("raspAddr");
+	        serverPort 		 = object.getInt("serverPort");
  	        
 		} catch (FileNotFoundException e) {
  			ColorsOut.outerr("setTheConfiguration ERROR " + e.getMessage() );
