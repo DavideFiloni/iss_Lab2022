@@ -6,6 +6,7 @@ import java.io.FileNotFoundException;
 import org.json.JSONObject;
 import org.json.JSONTokener;
 
+import it.unibo.comm2022.ProtocolType;
 import it.unibo.radarSystem22.domain.utils.ColorsOut;
 
 
@@ -20,6 +21,11 @@ public class RadarSystemConfig {
 	public static String hostAddr         = "localhost";		
 	public static String raspAddr         = "localhost";		
 	public static int serverPort          = 8023;
+	
+	//Aggiunte dello SPRINT2a 	
+	public static int ledPort             = 8010;
+	public static int sonarPort           = 8015;
+	public static ProtocolType protcolType = ProtocolType.tcp;
 	
 	public static void setTheConfiguration(  ) {
 		setTheConfiguration("../RadarSystemConfig.json");
@@ -40,9 +46,14 @@ public class RadarSystemConfig {
 	        testing          = object.getBoolean("testing");
 	        RadarGuiRemote   = object.getBoolean("RadarGuiRemote");
 	        DLIMIT           = object.getInt("DLIMIT");
-	        hostAddr		 = object.getString("hostAddr");
-	        raspAddr		 = object.getString("raspAddr");
-	        serverPort 		 = object.getInt("serverPort");
+	        //SPRINT2	
+	        serverPort		= object.getInt("serverPort");
+ 	        hostAddr 		= object.getString("hostAddr");
+	        raspAddr 		= object.getString("raspAddr");
+	        //SPRINT2a
+	        ledPort         = object.getInt("ledPort");
+	        sonarPort       = object.getInt("sonarPort");
+	        
  	        
 		} catch (FileNotFoundException e) {
  			ColorsOut.outerr("setTheConfiguration ERROR " + e.getMessage() );

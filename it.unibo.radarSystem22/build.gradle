@@ -11,7 +11,7 @@ plugins {
 	id 'jacoco'
 }
 
-version '1.1'
+version '1.2'
 
 sourceCompatibility = 1.8
 
@@ -31,7 +31,7 @@ dependencies {
 
 //CUSTOM RadarSystem
 	implementation name: 'it.unibo.radarSystem22.domain-1.0'
-	implementation name: 'it.unibo.comm2022-1.0'
+	implementation name: 'it.unibo.comm2022-2.0'
 	
 //CUSTOM unibo
     implementation name: '2p301'
