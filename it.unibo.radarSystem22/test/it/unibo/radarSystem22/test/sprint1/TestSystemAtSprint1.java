@@ -15,9 +15,7 @@ import it.unibo.radarSystem22.domain.utils.BasicUtils;
 
 public class TestSystemAtSprint1 {
 private RadarSystemSprint1Main sys;
-private int testingDistance = 0;
-
-	@Before
+@Before
 	public void setUp() {
 		System.out.println("setUp");
 		try {
@@ -40,13 +38,11 @@ private int testingDistance = 0;
 	
 	@Test 
 	public void testFarDistance() {
-		testingDistance = RadarSystemConfig.DLIMIT +20;
 		testTheDistance( false );
  	}	
 	
 	@Test 
 	public void testNearDistance( ) {
-		testingDistance = RadarSystemConfig.DLIMIT - 5;
 		testTheDistance( true );
 	}	
 	

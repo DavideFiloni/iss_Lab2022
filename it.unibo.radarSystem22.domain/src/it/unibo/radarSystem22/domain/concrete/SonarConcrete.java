@@ -9,9 +9,6 @@ import it.unibo.radarSystem22.domain.utils.ColorsOut;
 import it.unibo.radarSystem22.domain.utils.DomainSystemConfig;
 
 
-
-
-
 public class SonarConcrete extends SonarModel implements ISonar{
 	private  BufferedReader reader ;
 	private Process p ;
