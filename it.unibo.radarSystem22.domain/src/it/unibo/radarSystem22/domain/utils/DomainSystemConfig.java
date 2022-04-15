@@ -50,6 +50,7 @@ public class DomainSystemConfig {
 	        DLIMIT           = object.getInt("DLIMIT");	
 	        tracing          = object.getBoolean("tracing");
 	        testing          = object.getBoolean("testing");
+	        ledGui			 = object.getBoolean("ledGui");
 	        
  	        
 		} catch (FileNotFoundException | JSONException e) {
