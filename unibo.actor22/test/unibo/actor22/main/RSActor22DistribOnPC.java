@@ -9,7 +9,6 @@ import unibo.actor22.common.ApplData;
 import unibo.actor22.common.ControllerActor;
 import unibo.actor22.common.RadarSystemConfig;
 import unibo.actor22comm.ProtocolType;
-import unibo.actor22comm.context.EnablerContextForActors;
 import unibo.actor22comm.utils.CommSystemConfig;
 import unibo.actor22comm.utils.CommUtils;
 
@@ -57,8 +56,6 @@ public class RSActor22DistribOnPC implements IApplication{
 	}
 	
 	protected void configure () {
-		//ctx = new EnablerContextForActors("ctxRasp", RadarSystemConfig.ctxServerPort, RadarSystemConfig.protcolType);
-
 		Qak22Context.handleLocalActorDecl(this);
  		Qak22Context.handleRemoteActorDecl(this);
 		if( RadarSystemConfig.sonarObservable  ) {
@@ -68,7 +65,6 @@ public class RSActor22DistribOnPC implements IApplication{
 	}
 	
 	protected void execute() {
-		//ctx.activate();
 		Qak22Util.sendAMsg( ApplData.activateCrtl );
 	}
 	
