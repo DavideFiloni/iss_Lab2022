@@ -18,11 +18,6 @@ import unibo.actor22comm.utils.CommUtils;
 		name =      {ApplData.ledName, ApplData.sonarName }, 
 		implement = {LedActor.class, SonarActor.class })
 
-/*@ActorRemote(name =   {ApplData.controllerName}, 
-host=    {ApplData.pcAddr}, 
-port=    { ""+ApplData.ctxPort}, 
-protocol={ "TCP"})*/
-
 public class RSActor22DistribOnRasp implements IApplication {
 	private EnablerContextForActors ctx;
 
@@ -60,7 +55,6 @@ public class RSActor22DistribOnRasp implements IApplication {
 	protected void configure () {
 		ctx = new EnablerContextForActors("ctxPC", RadarSystemConfig.ctxServerPort, RadarSystemConfig.protcolType);
 		Qak22Context.handleLocalActorDecl(this);
-		//Qak22Context.handleRemoteActorDecl(this);
 		if( RadarSystemConfig.sonarObservable  ) {
  			Qak22Context.registerAsEventObserver(ApplData.controllerName, ApplData.evDistance);
 		}
@@ -69,7 +63,6 @@ public class RSActor22DistribOnRasp implements IApplication {
 	
 	protected void execute() {
 		ctx.activate();
-		//Qak22Util.sendAMsg( ApplData.activateCrtl );
 	}
 	
 	
