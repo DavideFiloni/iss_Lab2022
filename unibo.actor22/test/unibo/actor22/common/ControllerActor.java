@@ -8,14 +8,14 @@ import unibo.actor22comm.utils.ColorsOut;
 import unibo.actor22comm.utils.CommUtils;
 
 public class ControllerActor extends QakActor22 {
-	private final int ITERATION = 20;
-	//protected IRadarDisplay radar;
+	private final int ITERATION = 30;
+	protected IRadarDisplay radar;
 	private int i;
 	private boolean terminate;
 	
 	public ControllerActor (String name) {
 		super(name);
-		//radar = DeviceFactory.createRadarGui();
+		radar = DeviceFactory.createRadarGui();
 		i=0;
 		terminate = false;
 	}
@@ -49,14 +49,13 @@ public class ControllerActor extends QakActor22 {
 			String dStr = msg.msgContent();
 			int d = Integer.parseInt(dStr);
 			//Radar
-			//radar.update(dStr, "60");
+			radar.update(dStr, "60");
 			//LedUse case
 			if( d <  RadarSystemConfig.DLIMIT ) {
 				forward(ApplData.turnOnLed); 		
 			}
 			else {
 				forward(ApplData.turnOffLed); 
-				//doControllerWork();
 			}
 		}
 		doControllerWork();

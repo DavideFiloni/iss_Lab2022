@@ -19,8 +19,8 @@ public HashMap<String,IApplication> programs = new HashMap<String,IApplication>(
 	public void doChoice() {
 		try {
 			programs.put("1", new RSActorOnRasp() );				 
-			/*programs.put("2", new RadarSysSprint2ControllerOnRaspMain());  	 
-			programs.put("3", new RadarSysSprint2aDevicesOnRaspMain()); 
+			programs.put("2", new RSActor22DistribOnRasp());  	 
+			/*programs.put("3", new RadarSysSprint2aDevicesOnRaspMain()); 
 			programs.put("4", new RadarSysSprint3DevicesOnRaspMain());*/ 
   			String i = "";
 			outMenu();

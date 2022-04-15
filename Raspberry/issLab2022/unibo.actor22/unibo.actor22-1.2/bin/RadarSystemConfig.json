@@ -5,10 +5,11 @@
 "testing"          : "false",
 
 "hostAddr"         : "localhost",
-"raspAddr"         : "192.168.178.20",
+"raspAddr"         : "localhost",
 "serverPort"       : "8023",
 "ledPort"          : "8010",
 "sonarPort"        : "8015",
 "protocolType"     : "ProtocolType.tcp",
-"ctxServerPort"    : "8018"
+"ctxServerPort"	   : "8018",
+"sonarObservable"  : "false"
 }

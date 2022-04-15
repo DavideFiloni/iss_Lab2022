@@ -4,8 +4,8 @@ import it.unibo.radarSystem22.domain.utils.DomainSystemConfig;
 import unibo.actor22.Qak22Context;
 import unibo.actor22.Qak22Util;
 import unibo.actor22.annotations.ActorLocal;
+import unibo.actor22.annotations.ActorRemote;
 import unibo.actor22.common.ApplData;
-import unibo.actor22.common.ControllerActor;
 import unibo.actor22.common.LedActor;
 import unibo.actor22.common.RadarSystemConfig;
 import unibo.actor22.common.SonarActor;
@@ -14,13 +14,18 @@ import unibo.actor22comm.context.EnablerContextForActors;
 import unibo.actor22comm.utils.CommSystemConfig;
 import unibo.actor22comm.utils.CommUtils;
 
-@ActorLocal(name =     { ApplData.sonarName, ApplData.controllerName, ApplData.ledName }, 
-implement = {SonarActor.class, ControllerActor.class, LedActor.class }
-)
+@ActorLocal(
+		name =      {ApplData.ledName, ApplData.sonarName }, 
+		implement = {LedActor.class, SonarActor.class })
 
-public class RSActorOnRasp implements IApplication{
-	EnablerContextForActors ctx;
-	
+/*@ActorRemote(name =   {ApplData.controllerName}, 
+host=    {ApplData.pcAddr}, 
+port=    { ""+ApplData.ctxPort}, 
+protocol={ "TCP"})*/
+
+public class RSActor22DistribOnRasp implements IApplication {
+	private EnablerContextForActors ctx;
+
 	public void doJob(String domainConfig, String systemConfig) {
 		setup( domainConfig, systemConfig);
 		configure();
@@ -53,8 +58,9 @@ public class RSActorOnRasp implements IApplication{
 	}
 	
 	protected void configure () {
-		ctx = new EnablerContextForActors("ctx", RadarSystemConfig.ctxServerPort, RadarSystemConfig.protcolType);
+		ctx = new EnablerContextForActors("ctxPC", RadarSystemConfig.ctxServerPort, RadarSystemConfig.protcolType);
 		Qak22Context.handleLocalActorDecl(this);
+		//Qak22Context.handleRemoteActorDecl(this);
 		if( RadarSystemConfig.sonarObservable  ) {
  			Qak22Context.registerAsEventObserver(ApplData.controllerName, ApplData.evDistance);
 		}
@@ -63,14 +69,14 @@ public class RSActorOnRasp implements IApplication{
 	
 	protected void execute() {
 		ctx.activate();
-		Qak22Util.sendAMsg( ApplData.activateCrtl );
+		//Qak22Util.sendAMsg( ApplData.activateCrtl );
 	}
 	
 	
 	
 	public static void main( String[] args) {
 		CommUtils.aboutThreads("Before start - ");
-		new RSActorOnRasp().doJob("DomainSystemConfig.json", "RadarSystemConfig.json");
+		new RSActor22DistribOnRasp().doJob("DomainSystemConfig.json", "RadarSystemConfig.json");
 		CommUtils.aboutThreads("Before end - ");
 	}
 
@@ -78,6 +84,5 @@ public class RSActorOnRasp implements IApplication{
 	public String getName() {
 		return  this.getClass().getName();
 	}
-
 
 }

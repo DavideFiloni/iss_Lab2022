@@ -8,7 +8,8 @@ import unibo.actor22comm.ProtocolType;
 import unibo.actor22comm.utils.ColorsOut;
 
 public class ApplData {
-	public static final String raspAddr       = "localhost";
+	public static final String raspAddr       = "192.168.178.20";
+	public static final String pcAddr = "192.168.178.45";
 
 	public static final String ledName        = "led";
 	public static final String sonarName      = "sonar";

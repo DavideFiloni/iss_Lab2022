@@ -68,6 +68,11 @@
 			<attribute name="gradle_used_by_scope" value=""/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Davide/Desktop/Ingegenria dei Sistemi Software/issLab2022/unibolibs/unibo.actor22-1.1.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value=""/>
+		</attributes>
+	</classpathentry>
 	<classpathentry sourcepath="C:/Users/Davide/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib-jdk7/1.6.10/ccdfdab71f0f3ba104191d8f673d0620e7ed2e46/kotlin-stdlib-jdk7-1.6.10-sources.jar" kind="lib" path="C:/Users/Davide/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib-jdk7/1.6.10/e1c380673654a089c4f0c9f83d0ddfdc1efdb498/kotlin-stdlib-jdk7-1.6.10.jar">
 		<attributes>
 			<attribute name="gradle_used_by_scope" value=""/>
@@ -143,11 +148,6 @@
 		<attributes>
 			<attribute name="gradle_used_by_scope" value=""/>
 			<attribute name="test" value="true"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/Davide/Desktop/Ingegenria dei Sistemi Software/issLab2022/unibo.wenvUsage22/unresolved dependency -  unibo.actor22-1.1">
-		<attributes>
-			<attribute name="gradle_used_by_scope" value=""/>
 		</attributes>
 	</classpathentry>
 </classpath>
