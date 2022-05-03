@@ -53,7 +53,7 @@ public class RSActor22DistribOnRasp implements IApplication {
 	}
 	
 	protected void configure () {
-		ctx = new EnablerContextForActors("ctxPC", RadarSystemConfig.ctxServerPort, RadarSystemConfig.protcolType);
+		/*ctx = new*/ EnablerContextForActors.create("ctxPC", RadarSystemConfig.ctxServerPort, RadarSystemConfig.protcolType);
 		Qak22Context.handleLocalActorDecl(this);
 		if( RadarSystemConfig.sonarObservable  ) {
  			Qak22Context.registerAsEventObserver(ApplData.controllerName, ApplData.evDistance);

@@ -188,7 +188,7 @@ div.imagedesc{
     
 
    
-<title>Robot Aspirapolvere</title></head>
+<title>Robot Cleaner</title></head>
     
 <body>
 <div id="top">
@@ -196,7 +196,7 @@ div.imagedesc{
 </div>  
 
 <div class="body"> 
-<h2>Introduction: Robot Aspirapolvere</h2>
+<h2>Introduction: Robot Cleaner</h2>
  
  
 <h2>Requirements</h2>
@@ -211,7 +211,8 @@ Muovere il VirtualRobot in modo da coprire tutta la superficie di una stanza vuo
 <h2>Requirement analysis</h2>
  <div class="remark">
  Con coprire l'intera superificie della stanza si intende che il VirtualRobot deve passare per tutti i punti di essa<br>
- Le dimensioni della stanza sono note a priori?
+ Le dimensioni della stanza sono note a priori?<br>
+ La stanza ha superificie piana ed &eacute delimitata?
 
 </div>
 
@@ -222,15 +223,21 @@ Muovere il VirtualRobot in modo da coprire tutta la superficie di una stanza vuo
 <div class="remark">
  Il problema pi&uacute rilevante è verificare se il VirtualRobot copre intermanete la superficie della stanza<br>
  Vi sono varie modalit&agrave per tenere traccia di questa informazione e ci&ograve pu&ograve essere fatto direttamente dal VirtualRobot oppure delegato
- ad un'entit&aacute terza
+ ad un'entit&aacute terza<br>
+ Un altro punto rilevante &eacute la strategia da utilizzare per cercare di ricoprire l'intera stanza. La migliore dopo alcune riflessioni risulta quella di utilizzare il "movimento per colonne"<br>
+ In ogni caso &eacute necessario supporre che il robot si muove per passi di lunghezza DR, ossia diametro del cerchio di raggio minimo che circoscrive il robot. <br>
+ Perci&ograve il robot (cioè DR) diventa la unità di misura per le distanze, ovvero la stanza stessa può essere pensata come suddivisa in celle quadrate di lato DR(se la stanza non ha dimensioni multiple di DR nasce una criticit&aacute).<br><br>
+ Movimento per colonne: <br>
+ Il robot procede lungo il muro wallLeft fino a incontrare wallDown. Qui gira a sinistra, fa un passo laterale di lunghezza adeguaata,<br>
+ poi gira di nuovo a sinistra e procede diritto verso il muro wallUp; quando lo incontra gira a destra fa un passo laterale, rigira verso destra e di nuovo procede verso wallDown.<br><br>
+
+CompletamentoLavoro: durante un passo laterale, il robot incontrerà di sicuro wallRight: come ultima mossa procede lungo tale muro fino a che non incontra di nuovo un muro (wallUp o wallDown) e qui si ferma, considerando terminato il lavoro.
  
 </div>
  
 
 <h2>Test plans</h2> 
-<div class="remark">
 
-</div>
 <h2>Project</h2> 
  
 
@@ -242,6 +249,11 @@ Muovere il VirtualRobot in modo da coprire tutta la superficie di una stanza vuo
 
  
 <h2>Maintenance</h2> 
+
+<h2>Autovalutazione</h2> 
+<div class="remark">
+C : i concetti c'erano ma erano poco dettagliati.
+</div>
  
 <!-- USEFUL
 <table style="width:100%" border="1">

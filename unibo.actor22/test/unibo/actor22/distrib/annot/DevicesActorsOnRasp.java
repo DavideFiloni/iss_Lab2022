@@ -35,7 +35,7 @@ private EnablerContextForActors ctx;
 		
 		Qak22Context.handleLocalActorDecl(this);
   
-		ctx = new EnablerContextForActors( "ctx",ApplData.ctxPort,ApplData.protocol);
+		/*ctx = new*/ EnablerContextForActors.create( "ctx",ApplData.ctxPort,ApplData.protocol);
 		//new LedActor( ApplData.ledName );
  		//Registrazione dei componenti presso il contesto: NO MORE ... 
   	}
